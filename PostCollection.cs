@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace reddomended
 {
-    internal class SerializedFile
+    internal class PostCollection
     {
-        private SerializedFile(FileStream file)
+        private PostCollection(FileStream file)
         {
             if (!file.CanRead)
                 throw new FileLoadException("FileStream was unreadable.");
@@ -67,12 +67,12 @@ namespace reddomended
         /// <param name="file">A FileStream object pointing to the file.</param>
         /// <returns>The serialized file. Disposes the filestream upon return.</returns>
         /// <exception cref="ArgumentNullException">The FileStream was null and invalid.</exception>
-        public static SerializedFile Serialize(FileStream file)
+        public static PostCollection Serialize(FileStream file)
         {
             if (file == null)
                 throw new ArgumentNullException("FileStream at file was null.");
 
-            return new SerializedFile(file);
+            return new PostCollection(file);
         }
 
         public PostCategory[] Categories { get; private set; }

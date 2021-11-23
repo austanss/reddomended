@@ -1,17 +1,17 @@
 ﻿
 using reddomended;
 
-const string VERSION = "1.0.0";
+const string VERSION = "1.0.1";
 
 Console.WriteLine($"reddomended v{VERSION}\n");
 
-FileStream fs = File.OpenRead("SampleReddit.txt");
+FileStream fs = File.OpenRead("SampleCollection.txt");
 
-SerializedFile reddit = SerializedFile.Serialize(fs);
+PostCollection collection = PostCollection.Serialize(fs);
 
 Console.WriteLine("Categories:");
 
-foreach (PostCategory category in reddit.Categories)
+foreach (PostCategory category in collection.Categories)
     Console.WriteLine($"\t/{category.Name}");
 
 choose:
@@ -24,7 +24,7 @@ choice = Console.ReadLine();
 
 PostCategory chosen = null;
 
-foreach (PostCategory category in reddit.Categories)
+foreach (PostCategory category in collection.Categories)
     if (category.Name == choice)
         chosen = category;
 
