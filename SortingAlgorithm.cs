@@ -34,7 +34,7 @@ namespace reddomended
 
             posts.Add(Category.Posts[0]);
 
-            for (int i = 1, j = 0; i < Category.Posts.Length; i++)
+            for (int i=1, j=0; i < Category.Posts.Length; i++)
             {
                 Post post = Category.Posts[i];
                 
@@ -43,6 +43,70 @@ namespace reddomended
                     if (j==0) posts.Add(post);
                     posts[i-j] = posts[i-(++j)];
                     posts[i-j] = post;
+                    if (i-j == 0)
+                    {
+                        i++;
+                        j=0;
+                    }
+                    i--;
+                }
+                else
+                {
+                    if (j==0) posts.Add(post);
+                    j=0;
+                }
+            }
+
+            return posts.ToArray();
+        }
+
+        public Post[] SortByHot()
+        {
+            List<Post> posts = new List<Post>();
+
+            posts.Add(Category.Posts[0]);
+
+            for (int i=1, j=0; i < Category.Posts.Length; i++)
+            {
+                Post post = Category.Posts[i];
+
+                if ((posts[i-j-1].UpvotesPerHour - post.UpvotesPerHour) < 0)
+                {
+                    if (j==0) posts.Add(post);
+                    posts[i-j] = posts[i-(++j)];
+                    posts[i-j] = post;
+                    if (i-j == 0)
+                    {
+                        i++;
+                        j=0;
+                    }
+                    i--;
+                }
+                else
+                {
+                    if (j==0) posts.Add(post);
+                    j = 0;
+                }
+            }
+
+            return posts.ToArray();
+        }
+
+        public Post[] SortByTop()
+        {
+            List<Post> posts = new List<Post>();
+
+            posts.Add(Category.Posts[0]);
+
+            for (int i = 1, j = 0; i < Category.Posts.Length; i++)
+            {
+                Post post = Category.Posts[i];
+
+                if ((posts[i - j - 1].Score - post.Score) < 0)
+                {
+                    if (j == 0) posts.Add(post);
+                    posts[i - j] = posts[i - (++j)];
+                    posts[i - j] = post;
                     if (i - j == 0)
                     {
                         i++;
@@ -52,7 +116,7 @@ namespace reddomended
                 }
                 else
                 {
-                    if (j==0) posts.Add(post);
+                    if (j == 0) posts.Add(post);
                     j = 0;
                 }
             }

@@ -19,5 +19,7 @@ namespace reddomended
         public string Body { get; internal set; }
         public int Score { get; internal set; }
         public DateTime TimeOfPost { get; internal set; }
+
+        public double UpvotesPerHour { get { return Score / ((DateTime.Now - TimeOfPost).TotalSeconds / 60 / 60); } }
     }
 }
