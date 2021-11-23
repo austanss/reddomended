@@ -1,0 +1,28 @@
+﻿FoodTips>>>
+Good baked chicken,,,Recipe calls for chicken in an oven,,,403848,,,11/22/2021 18:07:31
+Crispy french fries,,,The trick is to twice-fry and cover in cornstarch,,,61404,,,11/16/2019 08:32:30
+Thoroughly-cooked baked potato,,,The trick is to make a deep slice down the center,,,173789,,,06/03/2013 12:43:57
+Deep frying is traumatizing,,,I will never deep fry anything again,,,27253,,,05/31/2016 00:57:04
+Best way to cook a steak,,,Cook it medium rare,,,177863,,,02/09/2018 01:25:16
+Please use seasonings,,,Unseasoned food is abominable,,,364850,,,06/09/2015 20:46:31
+Cook chicken thoroughly for safety,,,At least 175F,,,285105,,,04/06/2016 21:50:01
+Stovetops are indestructible,,,Not even hot oil can melt or burn them,,,419756,,,11/02/2019 04:08:43
+Pork done right,,,Shouldnt taste like leather,,,157761,,,05/05/2021 15:06:11
+---===MathPractice>>>
+y=mx+b,,,Solve literally for m.,,,156836,,,05/25/2015 16:29:50
+2x^2+16x+7,,,Find the vertex.,,,339779,,,01/13/2019 21:18:52
+a+7=14,,,Solve for a.,,,228155,,,01/25/2017 16:10:54
+2^16,,,Solve.,,,255518,,,09/13/2021 14:17:08
+s+52!=51!,,,Solve for s.,,,427042,,,02/15/2016 11:01:59
+2x+3y<5,,,Identify a solution.,,,339397,,,01/06/2017 03:50:59
+64/8,,,Simplify.,,,313623,,,08/10/2020 20:48:41
+2x-5x+7y-3y=2x,,,Solve for x.,,,367740,,,03/22/2015 22:41:05
+v=pi*r^2*h,,,Solve literally for h.,,,79756,,,01/03/2017 02:58:17
+r/c=x,,,Solve literally for r.,,,225742,,,07/29/2012 20:10:53
+5&8,,,Which one is smaller?,,,242303,,,11/01/2019 07:37:00
+2<<4,,,Solve the bitshift.,,,410465,,,04/14/2020 02:26:06
+-4+|-4|=x,,,Solve for x.,,,185641,,,01/21/2018 01:37:22
+|-8|=x,,,Solve for x.,,,9477,,,12/16/2014 20:21:26
+6^3,,,Solve.,,,217537,,,05/21/2017 04:04:21
+2+2,,,Solve.,,,295749,,,08/13/2014 16:37:20
+---===<XXXXX>
