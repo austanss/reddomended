@@ -1,15 +1,19 @@
 ﻿
 using reddomended;
 
-const string VERSION = "1.1.0";
+const string VERSION = "1.2.0";
 
 Console.WriteLine($"reddomended v{VERSION}\n");
 
+Console.Write("Serializing collections...");
+
 FileStream fs = File.OpenRead("SampleCollection.txt");
+
+Console.Write(" Done.\nGenerating benchmark data...");
 
 PostCollection collection = PostCollection.Serialize(fs);
 
-Console.WriteLine("Categories:");
+Console.WriteLine(" Done\n\nCategories:");
 
 foreach (PostCategory category in collection.Categories)
     Console.WriteLine($"\t/{category.Name}");
@@ -39,9 +43,13 @@ foreach (PostCategory category in collection.Categories)
 if (chosen == null)
     goto choose;
 
+bool benchmarking = (choice == "InternalBenchmark");
+
 SortingAlgorithm sorter = new SortingAlgorithm(chosen);
 
 Post[] posts;
+
+DateTime start = DateTime.Now;
 
 switch (sort)
 {
@@ -62,5 +70,10 @@ switch (sort)
         break;
 }
 
-foreach (Post post in posts)
-    Console.WriteLine($"{post.Title} ^ {post.Score} ({post.TimeOfPost})\n\t{post.Body}\n");
+DateTime end = DateTime.Now;
+
+if (!benchmarking)
+    foreach (Post post in posts)
+        Console.WriteLine($"{post.Title} ^ {post.Score} ({post.TimeOfPost})\n\t{post.Body}\n");
+else
+    Console.WriteLine($"Sorted 1048576 elements in {(end - start).TotalSeconds}s");

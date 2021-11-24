@@ -56,6 +56,30 @@ namespace reddomended
                 postCategories.Add(postCategory);
             }
 
+            PostCategory benchmark = new PostCategory();
+            benchmark.Name = "InternalBenchmark";
+            benchmark.Description = "An internal benchmark for the sorting algorithm. Uses randomly generated data.";
+            benchmark.Posts = new Post[1048576];
+
+            Random rng = new Random();
+
+            DateTime startDate = new DateTime(2011, 1, 1);
+
+            for (int i = 0; i < benchmark.Posts.Length; i++)
+            {
+                benchmark.Posts[i] = new Post();
+
+                benchmark.Posts[i].Score = rng.Next(500000);
+
+                benchmark.Posts[i].TimeOfPost = startDate.AddDays(rng.Next((DateTime.Today - startDate).Days));
+
+                benchmark.Posts[i].Title = rng.NextInt64().ToString();
+
+                benchmark.Posts[i].Body = rng.NextInt64().ToString();
+            }
+
+            postCategories.Add(benchmark);
+
             Categories = postCategories.ToArray();
 
             file.Dispose();
